@@ -1,4 +1,4 @@
-module github.com/HokieGeek/cx-keycloak-utils
+module github.com/hokiegeek/cx-keycloak-utils
 
 go 1.19
 

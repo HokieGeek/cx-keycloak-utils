@@ -13,7 +13,7 @@ brew install go
 
 #### install
 ```shell
-go install github.com/hokiegeek/cx-keycloak-utils/cmd/cx-add-to-innovators-group
+go install github.com/hokiegeek/cx-keycloak-utils/cmd/cx-add-to-innovators-group@latest
 ```
 
 #### run
