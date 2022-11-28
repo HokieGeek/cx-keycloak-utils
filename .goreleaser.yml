@@ -1,4 +1,4 @@
-project_name: cx-keycloack-utils
+project_name: cx-keycloak-utils
 env:
   - GO111MODULE=on
   - GOPRIVATE="github.com/sonatype"
@@ -15,16 +15,10 @@ builds:
 archives:
   - id: default
     builds:
-      - default
-    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}"
+      - add-to-innovators-group
+    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}"
     replacements:
       darwin: mac
-    # format_overrides:
-    #   - goos: darwin
-    #     format: zip
-    wrap_in_directory: "{{ .ProjectName }}"
-    files:
-      - README.md
 checksum:
   name_template: "checksums.txt"
 snapshot:
