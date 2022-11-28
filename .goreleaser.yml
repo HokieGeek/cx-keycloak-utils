@@ -1,0 +1,38 @@
+project_name: remediation-prioritizer
+env:
+  - GO111MODULE=on
+  - GOPRIVATE="github.com/sonatype"
+  - CGO_ENABLED=0
+builds:
+  - id: default
+    binary: cx-add-to-innovators-group
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+    main: ./cmd/cx-add-to-innovators-group
+archives:
+  - id: default
+    builds:
+      - default
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}"
+    replacements:
+      darwin: mac
+      windows: win
+    format_overrides:
+      - goos: windows
+        format: zip
+    wrap_in_directory: "{{ .ProjectName }}"
+    files:
+      - README.md
+checksum:
+  name_template: "checksums.txt"
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"

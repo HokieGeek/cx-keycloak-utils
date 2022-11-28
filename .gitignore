@@ -1,2 +1,4 @@
 **/*.yaml
 **/*.csv
+.idea
+dist
