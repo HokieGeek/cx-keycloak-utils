@@ -1,4 +1,4 @@
-project_name: remediation-prioritizer
+project_name: cx-keycloack-utils
 env:
   - GO111MODULE=on
   - GOPRIVATE="github.com/sonatype"
@@ -19,9 +19,8 @@ archives:
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}"
     replacements:
       darwin: mac
-      windows: win
     format_overrides:
-      - goos: windows
+      - goos: darwin
         format: zip
     wrap_in_directory: "{{ .ProjectName }}"
     files:
