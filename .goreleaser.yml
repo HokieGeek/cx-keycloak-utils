@@ -4,7 +4,7 @@ env:
   - GOPRIVATE="github.com/sonatype"
   - CGO_ENABLED=0
 builds:
-  - id: default
+  - id: add-to-innovators-group
     binary: cx-add-to-innovators-group
     goos:
       - linux
@@ -19,9 +19,9 @@ archives:
     name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}"
     replacements:
       darwin: mac
-    format_overrides:
-      - goos: darwin
-        format: zip
+    # format_overrides:
+    #   - goos: darwin
+    #     format: zip
     wrap_in_directory: "{{ .ProjectName }}"
     files:
       - README.md
